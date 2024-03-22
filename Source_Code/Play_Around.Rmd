@@ -1,0 +1,91 @@
+---
+title: "Play_Around"
+author: "Donald"
+date: "2024-03-22"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+# Pulling the in-Built Dataset in RStudio
+
+```{r}
+library(datasets)
+data("iris")
+
+iris_Data = iris
+
+iris_Data
+```
+
+## Count how many rows and columns there are
+```{r}
+dim(iris_Data)
+```
+## Names of the columns
+```{r}
+names(iris_Data)
+
+```
+
+## In detail summary of the columns names, datatypes, and number of columns and number of rows 
+```{r}
+str(iris_Data)
+```
+
+## Objects details summary
+```{r}
+attributes(iris_Data)
+
+```
+
+## Descriptive Analyses (Number Summary)
+```{r}
+summary(iris_Data)
+```
+
+## Finding the variance of the Sepal.Length column 
+```{r}
+var(iris_Data$Sepal.Length)
+```
+
+## Histogram of Sepal.Length column
+```{r}
+hist(iris_Data$Sepal.Length)
+```
+
+## Plot the kernel density estimate of the Sepal.Length column
+```{r}
+plot(density(iris_Data$Sepal.Length))
+```
+
+## Summary of the Species values. Must be factorised for this to work
+```{r}
+table(iris_Data$Species)
+```
+
+## Pie charts of the Species column values
+```{r}
+pie(table(iris_Data$Species))
+```
+
+## Bar charts of the Species column values
+```{r}
+barplot(table(iris_Data$Species))
+
+```
+
+## Calculate the correlation coefficient between Sepal.Length and Petal.Length
+```{r}
+cor(iris_Data$Sepal.Length, iris_Data$Petal.Length)
+```
+
+
